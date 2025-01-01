@@ -72,6 +72,37 @@ export default class BlogController {
       
     // for updating a blog
     async updateBlog(req, res) {
-      
+        try {
+            const id = req.params.id;
+            const { title, description, category } = req.body;
+    
+            if (!id) return res.status(400).json({ success: false, message: "ID required" });
+    
+            const blog = await Blog.findById(id);
+            if (!blog) return res.status(404).json({ success: false, message: "Blog not found" });
+    
+            // Create update object and only include fields that have values
+            const updateData = {};
+            if (title) updateData.title = title;
+            if (description) updateData.description = description;
+            if (category) updateData.category = category;
+    
+            if (Object.keys(updateData).length === 0) {
+                return res.status(400).json({ success: false, message: "No fields to update" });
+            }
+    
+            // Perform the update
+            const result = await Blog.updateOne({ _id: id }, { $set: updateData });
+            if (result){
+                return res.json({ success: true, message: "Changes made" });
+            }
+            
+            return res.json({ success: false, message: "No Changes made" });
+        } catch (err) {
+            console.error(err);  // Log error for debugging
+            return res.status(500).json({ success: false, message: "Server error", error: err.message });
+        }
     }
+    
+    
 }

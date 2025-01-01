@@ -15,8 +15,6 @@ blogRouter.get('/allBlog', blogController.allBlogs)
 blogRouter.get('/blog/:id', blogController.blogById)
 
 //update blog
-blogRouter.get('/allBlog', (req,res)=>{
-    res.send("This is all blog router");
-})
+blogRouter.put('/updateBlog/:id', blogController.updateBlog)
 
 export default blogRouter;
