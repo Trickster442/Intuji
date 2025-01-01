@@ -3,7 +3,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import mongoose from 'mongoose';
 import blogRouter from './router/blogRouter.js';
-
+import Blog from './model/blog.js';
 const server = express();
 
 //middlewares
@@ -31,6 +31,14 @@ const create_connection = async ()=>{
     })
 }
 create_connection();
+
+
+Blog.syncIndexes().then(() => {
+    console.log("Indexes rebuilt successfully.");
+}).catch((err) => {
+    console.error("Error rebuilding indexes:", err);
+});
+
 
 // Start the server
 server.listen(process.env.PORT, () => {
