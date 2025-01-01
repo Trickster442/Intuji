@@ -12,9 +12,7 @@ blogRouter.get('/allBlog', blogController.allBlogs)
 
 
 //blog by id
-blogRouter.get('/allBlog', (req,res)=>{
-    res.send("This is all blog router");
-})
+blogRouter.get('/blog/:id', blogController.blogById)
 
 //update blog
 blogRouter.get('/allBlog', (req,res)=>{
