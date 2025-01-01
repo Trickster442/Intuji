@@ -7,13 +7,13 @@ const blogSchema = new mongoose.Schema({
         trim: true, // Ensures there are no leading or trailing spaces
     },
     description: {
-        type: String, // Corrected `Text` to `String`, as `Text` is not a valid Mongoose type
-        required: true, // Add this to ensure the description is always provided
+        type: String, 
+        required: true, 
     },
     category: {
         type: String,
         required: true,
-        enum: ['Tech', 'Travel', 'Movie', 'Lifestyle', 'Food'], // Allowed categories
+        enum: ['Tech', 'Travel', 'Movie', 'Lifestyle', 'Food'], //only provided values is allowed
     },
     // Uncomment and use this if you want to reference a separate Category model:
     // category: {

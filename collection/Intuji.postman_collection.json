@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "7c05ca2f-b4c8-4508-b00b-37dbbb744654",
+		"name": "Intuji",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40736593"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/blogs/postBlog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\":\"My life \",\n  \"description\":\"This blog is related to my life\",\n  \"category\":\"Lifestyle\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/blogs/postBlog",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blogs",
+						"postBlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/blogs/allBlog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/blogs/allBlog",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blogs",
+						"allBlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/blogs/blog/6774dfda8a096ce1fdef2b3a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/blogs/blog/6774f3a71b21cec23773739c",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blogs",
+						"blog",
+						"6774f3a71b21cec23773739c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/blogs/updateBlog/6774fa6107b4faa4d8d60eaf",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New life 2\",\n  \"description\":  \"New chapter of the life\",\n  \"category\": \"Lifestyle\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/blogs/updateBlog/6774fa6107b4faa4d8d60eaf",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blogs",
+						"updateBlog",
+						"6774fa6107b4faa4d8d60eaf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
